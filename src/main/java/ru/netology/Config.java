@@ -1,6 +1,7 @@
 package ru.netology;
 
 import java.io.FileInputStream;
+import java.io.IOException;
 import java.util.Properties;
 
 public class Config {
@@ -11,7 +12,7 @@ public class Config {
             Properties prop = new Properties();
             prop.load(fis);
             port = Integer.parseInt(prop.getProperty("SERVER_PORT"));
-        } catch (Exception e) {
+        } catch (IOException e) {
             System.out.println(e.getMessage());
         }
     }
